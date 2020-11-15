@@ -24,7 +24,6 @@ class MatchString:
         # Common OCR Deletion Mistakes
         self.delete_costs = np.ones(128, dtype=np.float64)
         self.delete_costs[ord(' ')] = 0.25
-        self.delete_costs[ord('\'')] = 0.25
 
         # Common OCR Mistakes - Group 1
         self.substitute_costs[ord('o'), ord('o')] = 0.25
@@ -70,7 +69,7 @@ class MatchString:
         self.substitute_costs[ord('c'), ord('g')] = 0.25
         self.substitute_costs[ord('g'), ord('c')] = 0.25
 
-
     def match(self, string1, string2):
         # Testing
-        return lev(str(string1).lower(), str(string2).lower(), substitute_costs=self.substitute_costs, delete_costs=self.delete_costs, insert_costs=self.insert_costs)
+        return lev(string1.lower(), string2.lower(), substitute_costs=self.substitute_costs,
+                   delete_costs=self.delete_costs, insert_costs=self.insert_costs)
