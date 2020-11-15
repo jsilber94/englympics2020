@@ -45,13 +45,24 @@ def binary_search_for_strings(arr, target):
             best_index = middle
             best_name = name
             max_distance = distance
+            if distance < 2:
+                return arr[best_index]
         if midpoint > target:
             end = middle - 1
         elif midpoint < target:
             start = middle + 1
-        else:
-            return arr[best_index]
+
+    for row in arr:
+        name = clean_str(row[0])
+        distance = m.match(target, name)
+        if distance < max_distance:
+            max_distance = distance
+            best_name = name
+            if distance < 5:
+                return row
+
     return arr[best_index]
+
 
 def print_supplier(supplier, file_nbr):
     print('name: ' + supplier[0])
