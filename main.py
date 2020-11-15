@@ -9,7 +9,9 @@ if __name__ == '__main__':
 
     supplier_lists_path = [
         os.path.abspath("data/supplierList/supplierlist1-sorted.csv"),
-        os.path.abspath("data/supplierList/supplierlist2-sorted.csv")
+        os.path.abspath("data/supplierList/supplierlist2-sorted.csv"),
+        os.path.abspath("data/supplierList/supplierlist1-phone-sorted.csv"),
+        os.path.abspath("data/supplierList/supplierlist2-phone-sorted.csv")
     ]
 
     # binary_search_on_suppliers(supplier_lists_path, '')

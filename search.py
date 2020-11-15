@@ -1,7 +1,8 @@
 from pandas import read_csv
 from matchstrings import MatchString
 
-def binary_search_on_suppliers(supplier_lists_path, company_name):
+
+def binary_search_on_suppliers(supplier_lists_path, target, search_type):
     # raw_data = []
     #
     # for x in range(len(supplier_lists_path)):
@@ -9,21 +10,33 @@ def binary_search_on_suppliers(supplier_lists_path, company_name):
 
     dataframe_csv1 = read_csv(supplier_lists_path[0], delimiter=',', encoding='utf-8')
     dataframe_csv2 = read_csv(supplier_lists_path[1], delimiter=',', encoding='utf-8')
+    dataframe_csv3 = read_csv(supplier_lists_path[2], delimiter=',', encoding='utf-8')
+    dataframe_csv4 = read_csv(supplier_lists_path[3], delimiter=',', encoding='utf-8')
 
     raw_data_csv1 = dataframe_csv1.to_numpy()
     raw_data_csv2 = dataframe_csv2.to_numpy()
+    raw_data_csv3 = dataframe_csv3.to_numpy()
+    raw_data_csv4 = dataframe_csv4.to_numpy()
 
-    supplier = binary_search_for_strings(raw_data_csv1, company_name)
+    supplier = None
+
+    if search_type == 'name':
+        supplier = binary_search_for_strings(raw_data_csv1, target, search_type)
+    elif search_type == 'phone':
+        supplier = binary_search_for_strings(raw_data_csv3, target, search_type)
 
     if supplier is not None:
         print_supplier(supplier, '1')
         return True
 
     else:
-        supplier = binary_search_for_strings(raw_data_csv2, company_name)
+        if search_type == 'name':
+            supplier = binary_search_for_strings(raw_data_csv2, target, search_type)
+        elif search_type == 'phone':
+            supplier = binary_search_for_strings(raw_data_csv4, target, search_type)
         if supplier is not None:
+            print_supplier(supplier, '2')
             return False
-            # print_supplier(supplier, '2')
 
 
 def clean_str(string):
@@ -32,7 +45,7 @@ def clean_str(string):
     return clean_string
 
 
-def binary_search_for_strings(arr, target):
+def binary_search_for_strings(arr, target, search_type):
     m = MatchString()
     start = 0
     end = len(arr) - 1
@@ -41,22 +54,31 @@ def binary_search_for_strings(arr, target):
     best_name = ""
     while start <= end:
         middle = (start + end) // 2
-        name = clean_str(arr[middle][0])
-        midpoint = name
-        distance = m.match(target.lower(), name.lower())
+        search_string = ''
+
+        if search_type == 'name':
+            search_string = clean_str(arr[middle][0])
+        elif search_type == 'phone':
+            search_string = clean_str(arr[middle][3]) + '.0'
+
+        midpoint = search_string
+        distance = m.match(target.lower(), search_string.lower())
+
         if distance < max_distance:
             best_index = middle
             max_distance = distance
             if distance < 2:
                 return arr[best_index]
+
         if midpoint > target:
             end = middle - 1
         elif midpoint < target:
             start = middle + 1
 
     for row in arr:
-        name = clean_str(row[0])
-        distance = m.match(target, name)
+        search_string = clean_str(row[0])
+        distance = m.match(target.lower(), search_string.lower())
+
         if distance < max_distance:
             max_distance = distance
             if distance < 5:
