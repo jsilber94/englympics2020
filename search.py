@@ -21,9 +21,9 @@ def binary_search_on_suppliers(supplier_lists_path, target, search_type):
     supplier = None
 
     if search_type == 'name':
-        supplier = binary_search_for_strings(raw_data_csv1, target, search_type)
+        supplier = binary_search_for_strings(raw_data_csv1, target)
     elif search_type == 'phone':
-        supplier = binary_search_for_strings(raw_data_csv3, target, search_type)
+        supplier = binary_search(raw_data_csv3, target)
 
     if supplier is not None:
         print_supplier(supplier, '1')
@@ -31,9 +31,9 @@ def binary_search_on_suppliers(supplier_lists_path, target, search_type):
 
     else:
         if search_type == 'name':
-            supplier = binary_search_for_strings(raw_data_csv2, target, search_type)
+            supplier = binary_search_for_strings(raw_data_csv2, target)
         elif search_type == 'phone':
-            supplier = binary_search_for_strings(raw_data_csv4, target, search_type)
+            supplier = binary_search(raw_data_csv4, target)
         if supplier is not None:
             print_supplier(supplier, '2')
             return False
@@ -45,7 +45,7 @@ def clean_str(string):
     return clean_string
 
 
-def binary_search_for_strings(arr, target, search_type):
+def binary_search_for_strings(arr, target):
     m = MatchString()
     start = 0
     end = len(arr) - 1
@@ -56,10 +56,7 @@ def binary_search_for_strings(arr, target, search_type):
         middle = (start + end) // 2
         search_string = ''
 
-        if search_type == 'name':
-            search_string = clean_str(arr[middle][0])
-        elif search_type == 'phone':
-            search_string = clean_str(arr[middle][3]) + '.0'
+        search_string = clean_str(arr[middle][0])
 
         midpoint = search_string
         distance = m.match(target.lower(), search_string.lower())
@@ -87,6 +84,31 @@ def binary_search_for_strings(arr, target, search_type):
     if distance > 15:
         return "?"
     return arr[best_index]
+
+
+def binary_search(arr, x):
+    low = 0
+    high = len(arr) - 1
+    mid = 0
+
+    while low <= high:
+
+        mid = (high + low) // 2
+
+        # Check if x is present at mid
+        if arr[mid][3] < x:
+            low = mid + 1
+
+        # If x is greater, ignore left half
+        elif arr[mid][3] > x:
+            high = mid - 1
+
+        # If x is smaller, ignore right half
+        else:
+            return mid
+
+            # If we reach here, then the element was not present
+    return -1
 
 
 def print_supplier(supplier, file_nbr):
