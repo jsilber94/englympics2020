@@ -24,11 +24,11 @@ if __name__ == '__main__':
     start = time.time()
     # iterate through the keywords file by file
     for store in search_objects:
-        # if store.phone is not None and binary_search_on_suppliers(supplier_lists_path, store.phone, 'phone') is False:
-        for name in store.name:
-            if binary_search_on_suppliers(supplier_lists_path, name, 'name') is True:
-                print(name)
-                break
+        if store.phone != -1 and binary_search_on_suppliers(supplier_lists_path, store.phone, 'phone') is False:
+            for name in store.name:
+                if binary_search_on_suppliers(supplier_lists_path, name, 'name') is True:
+                    print(name)
+                    break
     print(time.time() - start)
     print("------------------")
 
