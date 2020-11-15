@@ -16,8 +16,9 @@ def binary_search_on_suppliers(supplier_lists_path, company_name):
     supplier = binary_search_for_strings(raw_data_csv1, company_name)
 
     if supplier is not None:
+        print_supplier(supplier, '1')
         return True
-        # print_supplier(supplier, '1')
+
     else:
         supplier = binary_search_for_strings(raw_data_csv2, company_name)
         if supplier is not None:
@@ -57,8 +58,8 @@ def binary_search_for_strings(arr, target):
 
 def print_supplier(supplier, file_nbr):
     print('name: ' + supplier[0])
-    print('SIC4 Category: ' + supplier[1])
-    print('SIC8 Category: ' + supplier[2])
-    print('Phone: ' + str(supplier[3]))
-    print('id: ' + str(supplier[4]))
-    print('file number: ' + file_nbr)
+    # print('SIC4 Category: ' + supplier[1])
+    # print('SIC8 Category: ' + supplier[2])
+    # print('Phone: ' + str(supplier[3]))
+    # print('id: ' + str(supplier[4]))
+    # print('file number: ' + file_nbr)
