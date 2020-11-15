@@ -105,7 +105,7 @@ def binary_search(arr, x):
 
         # If x is smaller, ignore right half
         else:
-            return mid
+            return arr[mid]
 
             # If we reach here, then the element was not present
     return -1
