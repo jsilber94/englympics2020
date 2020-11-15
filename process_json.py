@@ -13,19 +13,26 @@ def full_text_annotation(store):
 
 
 def get_phone_number(text_to_parse):
+    # North America phone format
     reg = re.compile("(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}")
     phone = reg.search(str(text_to_parse))
+
+    if phone is None:
+        # International phone number format
+        reg = re.compile(
+            "(?:\d{8}(?:\d{2}(?:\d{2})?)?|\(\+?\d{2,3}\)\s?(?:\d{4}[\s*.-]?\d{4}|\d{3}[\s*.-]?\d{3}|\d{2}([\s*.-]?)\d{2}\1\d{2}(?:\1\d{2})?))")
+        phone = reg.search(str(text_to_parse))
     if phone is None:
         return phone
-    else:
-        return ''.join(e for e in phone.group() if e.isalnum())
+    return ''.join(e for e in phone.group() if e.isalnum())  # format the phone numbers in ##########
 
 
 def get_name(text_to_parse):
     names = []
+    # Split based on new line (\n)
     text_to_parse_split = text_to_parse.split('\n')
     try:
-        for j in range(0, 3):
+        for j in range(0, 3):  # The name is found before the 4th new line (\n)
             if text_to_parse_split[j].isnumeric() is False and \
                     re.search('[a-zA-Z]', text_to_parse_split[j]) is not None:
                 names.append(text_to_parse_split[j])
@@ -37,7 +44,7 @@ def get_name(text_to_parse):
 def process_json(path):
     search_objects = []
     files = os.listdir(path)
-
+    # Get the file names and pass the data one by one
     for file in files:
         file_path = path + "/" + file
         with open(file_path, "r") as f:
