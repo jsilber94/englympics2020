@@ -42,6 +42,10 @@ def get_name(text_to_parse):
                 clean_data = text_to_parse_split[j].strip()
                 clean_data = clean_data.encode('ascii', 'ignore')
                 clean_data = clean_data.lower()
+                if str(clean_data).find("Co.") != -1:
+                    names = []
+                    names.append(clean_data)
+                    break
                 names.append(str(clean_data))
 
         return names
