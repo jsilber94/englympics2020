@@ -73,4 +73,4 @@ class MatchString:
 
     def match(self, string1, string2):
         # Testing
-        return lev(string1.lower(), string2.lower(), substitute_costs=self.substitute_costs, delete_costs=self.delete_costs, insert_costs=self.insert_costs)
+        return lev(str(string1).lower(), str(string2).lower(), substitute_costs=self.substitute_costs, delete_costs=self.delete_costs, insert_costs=self.insert_costs)
