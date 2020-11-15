@@ -33,9 +33,15 @@ def get_name(text_to_parse):
     text_to_parse_split = text_to_parse.split('\n')
     try:
         for j in range(0, 3):  # The name is found before the 4th new line (\n)
-            if text_to_parse_split[j].isnumeric() is False and \
-                    re.search('[a-zA-Z]', text_to_parse_split[j]) is not None:
-                names.append(text_to_parse_split[j])
+            if text_to_parse_split[j].isnumeric() is False and re.search('[a-zA-Z]',
+                                                                         text_to_parse_split[j]) is not None:
+                # replace ## with empty
+                stuff_to_remove = re.findall("[0-9]{2,}", text_to_parse_split[j])
+                for thing in stuff_to_remove:
+                    text_to_parse_split[j] = text_to_parse_split[j].replace(thing, "")
+                clean_data = text_to_parse_split[j].replace(" ", "")
+                names.append(clean_data)
+
         return names
     except IndexError:
         return names

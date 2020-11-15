@@ -13,7 +13,7 @@ if __name__ == '__main__':
     ]
 
     binary_search_on_suppliers(supplier_lists_path, '')
-    m = MatchString()
+    # m = MatchString()
     # process json and get a list of keywords to match
     # search_objects = process_json(sys.argv[1])
     search_objects = process_json("data/Training Json")
