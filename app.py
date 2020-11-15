@@ -1,2 +1,7 @@
+import sys
+from parsing import parse_json
+
 if __name__ == '__main__':
-    print('hello world')
+    supplier_name = parse_json(sys.argv[1])
+    print(supplier_name)
+
