@@ -1,0 +1,24 @@
+1 - couche-tard, 514 388 5947      "description":"26\nCOUCHE-TARD 1252\n9255 Boul. St-Laurent\nMontreal, Quebec H2N 1N2\n514-388-5974\nDate **ignore numbers
+2 - chez cora, 450 669 1134        "description":"Chez Cora\n2100, boul. des Laurentides\nVimont, Quebec\nH
+3 - voisin, 514 626 9106           "description":"Valerin\nBonisoir 2061\n360 Cherrier\n\u00eele Bizard\
+4 - le magasin, 450 229 2023       "description":"le magawin\nLE MAGASIN \/ Esso\n258 Valiquette\nSte-Adele,
+5 - boston pizza, 450 455 4464     "description":"BD Boston Pizza\nPRESS\nOn aime faire plaisir:
+6 - petro-canada, 450 687 7430     "description":"D\u00e9coumiser comucents\nPETRO-CANADA\n4560 AUTOROUTE 44
+7 - starbucks coffee,              "description":"Starbucks Coffee #29743\n2500 Des Laurentides Blvd\nL
+8 - rustico express,               "description":"RUSTICO EXPRESS\n9249-3873 QUEBEC INC.\n229 BOU
+9 - yuukai sushi, 514 278 4572     "description":"Yuukai Sushi\n5658 Avenue du Parc\nMontrea
+10 - iga, 819 379 6622             "description":"IGA\nBIENVENUE AU IGA STE-MARGUERITE\nTel. :
+11 - uline, 1 800 295 5510         "description":"INVOICE NO.\nULINE\nDUPLICATE\n4689845\n1
+12 - fedex,                        "description":"FedEx\nSave time and money.
+13 - QUÉBERGE, 514 264 6317        "QU\u00c9BERGE\nOSTE\nSD\nPe\n127, 17e avenue\nDrummondville, Qc, J2B 3J8\n(514) 264-6317\
+14 - rubiks, 514 845 8444          "description":"SOLUTIONS\nrubiks\nRubiks.\n2148 Mackay\n514.845.8444
+15 - rogers,                       "description":"006309-0043783 6309 1 3 5\n48\nROGERS\"\
+16 - u-haul, 514 385 6297          "description":"CONTRAT DE LOCATION D'\u00c9QUIPEMENT U-HAUL\nRetour d'une location En-Ville (RETOUR)\n(514)385-6297
+17 - babyton                       "description":"B|BABYTON\nBBTANK\nHong Kong BBT Industrial Co.,
+18 - foyers mirabel                "description":"FACTURE\nLes Foyers Mirabel\n2520
+19 - tlm sysÉtmes                  "description":"tim temes\nFacture\n#9
+20 - uber eats                     "description":"Uber Eats\nTotal 51,84 $
+
+
+***if its just numbers leave it out
+***split by "/n"
