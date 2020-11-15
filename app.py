@@ -12,5 +12,5 @@ if __name__ == '__main__':
     #print(supplier_name)
     transpose_costs = np.ones((128, 128), dtype=np.float64)
     m = MatchString()
-    print(m.match("HANANA", "BANANA"))
+    print(m.match("BODY", "BEDY"))
 

@@ -17,23 +17,32 @@ class MatchString:
 
         # Common OCR Mistakes - Group 1
         self.substitute_costs[ord('O'), ord('D')] = 0
+        self.substitute_costs[ord('D'), ord('O')] = 0
 
         self.substitute_costs[ord('Q'), ord('D')] = 0
+        self.substitute_costs[ord('D'), ord('Q')] = 0
 
         self.substitute_costs[ord('O'), ord('Q')] = 0
+        self.substitute_costs[ord('Q'), ord('O')] = 0
 
         # Common OCR Mistakes - Group 2
         self.substitute_costs[ord('I'), ord('J')] = 0
+        self.substitute_costs[ord('J'), ord('I')] = 0
 
         self.substitute_costs[ord('I'), ord('L')] = 0
+        self.substitute_costs[ord('L'), ord('I')] = 0
 
         self.substitute_costs[ord('I'), ord('T')] = 0
+        self.substitute_costs[ord('T'), ord('I')] = 0
 
         self.substitute_costs[ord('J'), ord('L')] = 0
+        self.substitute_costs[ord('L'), ord('J')] = 0
 
         self.substitute_costs[ord('J'), ord('T')] = 0
+        self.substitute_costs[ord('T'), ord('J')] = 0
 
         self.substitute_costs[ord('L'), ord('T')] = 0
+        self.substitute_costs[ord('T'), ord('L')] = 0
 
         # Common OCR Mistakes - Group 3
 
@@ -43,12 +52,13 @@ class MatchString:
         # Common OCR Mistakes - Group 4
 
         self.substitute_costs[ord('F'), ord('P')] = 0
+        self.substitute_costs[ord('P'), ord('F')] = 0
 
         # Common OCR Mistakes - Group 5
 
         self.substitute_costs[ord('C'), ord('G')] = 0
+        self.substitute_costs[ord('G'), ord('C')] = 0
 
     def match(self, string1, string2):
         # Testing
-        self.substitute_costs[ord('H'), ord('B')] = 0  # make substituting 'H' for 'B' cost 1.25
         return lev(string1, string2, substitute_costs=self.substitute_costs)
