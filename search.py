@@ -85,7 +85,7 @@ def binary_search_for_strings(arr, target, search_type):
                 return row
 
     if distance > 15:
-        return ["?"]
+        return ['?', '?', '?', '? ', '?']
     return arr[best_index]
 
 
