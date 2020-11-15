@@ -23,7 +23,7 @@ def get_phone_number(text_to_parse):
             "(?:\d{8}(?:\d{2}(?:\d{2})?)?|\(\+?\d{2,3}\)\s?(?:\d{4}[\s*.-]?\d{4}|\d{3}[\s*.-]?\d{3}|\d{2}([\s*.-]?)\d{2}\1\d{2}(?:\1\d{2})?))")
         phone = reg.search(str(text_to_parse))
     if phone is None:
-        return phone
+        return -1
     return ''.join(e for e in phone.group() if e.isalnum())  # format the phone numbers in ##########
 
 
@@ -78,7 +78,7 @@ def extract_data(json_data):
             store = json_data[0]['fullTextAnnotation']
             text_to_parse = full_text_annotation(store)
 
-        phone = get_phone_number(text_to_parse)
+        phone = int(get_phone_number(text_to_parse))
         search_object.phone = phone
 
         names = get_name(text_to_parse)
