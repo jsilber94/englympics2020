@@ -1,5 +1,5 @@
 from pandas import read_csv
-
+from matchstrings import MatchString
 
 def binary_search_on_suppliers(supplier_lists_path, company_name):
     # raw_data = []
@@ -32,19 +32,28 @@ def clean_str(string):
 
 
 def binary_search_for_strings(arr, target):
+    m = MatchString()
     start = 0
     end = len(arr) - 1
+    max_distance = 100000
+    best_index = -1
+    best_name = ""
     while start <= end:
         middle = (start + end) // 2
         name = clean_str(arr[middle][0])
         midpoint = name
+        distance = m.match(target, name)
+        if distance < max_distance:
+            best_index = middle
+            best_name = name
+            max_distance = distance
         if midpoint > target:
             end = middle - 1
         elif midpoint < target:
             start = middle + 1
         else:
-            return arr[middle]
-
+            return arr[best_index]
+    return arr[best_index]
 
 def print_supplier(supplier, file_nbr):
     print('name: ' + supplier[0])
