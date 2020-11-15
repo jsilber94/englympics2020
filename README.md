@@ -11,7 +11,7 @@ python3: https://www.python.org/downloads/ \
 
 #Commands
 
-run app: ```python app.py``` \
+run app: ```python main.py``` \
 run app with arguments of the path:  ```python app.py "/home/bogalla/Documents/repos/englympics2020/data/Training Json"``` \
 Activate env (optional): ```./env/Scripts/activate.bat``` \
 Install dependencies: ```pip install -r requirements.txt``` \
