@@ -39,7 +39,7 @@ def get_name(text_to_parse):
                 stuff_to_remove = re.findall("[0-9]{2,}", text_to_parse_split[j])
                 for thing in stuff_to_remove:
                     text_to_parse_split[j] = text_to_parse_split[j].replace(thing, "")
-                clean_data = text_to_parse_split[j].replace(" ", "")
+                clean_data = text_to_parse_split[j].strip()
                 clean_data = clean_data.encode('ascii', 'ignore')
                 clean_data = clean_data.lower()
                 names.append(str(clean_data))
