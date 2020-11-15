@@ -16,3 +16,7 @@ run app with arguments of the path:  ```python app.py "/home/bogalla/Documents/r
 Activate env (optional): ```./env/Scripts/activate.bat``` \
 Install dependencies: ```pip install -r requirements.txt``` \
 Make requirement.txt from dependencies inside env: ```pip freeze > requirements.txt```
+
+#References
+Levenshtein Distance Technique in Dictionary Lookup Methods: An Improved Approach by Rishin Haldarand and Debajyoti Mukhopadhyay
+https://arxiv.org/ftp/arxiv/papers/1101/1101.1232.pdf
