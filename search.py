@@ -16,11 +16,13 @@ def binary_search_on_suppliers(supplier_lists_path, company_name):
     supplier = binary_search_for_strings(raw_data_csv1, company_name)
 
     if supplier is not None:
-        print_supplier(supplier, '1')
+        return True
+        # print_supplier(supplier, '1')
     else:
         supplier = binary_search_for_strings(raw_data_csv2, company_name)
         if supplier is not None:
-            print_supplier(supplier, '2')
+            return False
+            # print_supplier(supplier, '2')
 
 
 def clean_str(string):
