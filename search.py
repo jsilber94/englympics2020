@@ -43,10 +43,9 @@ def binary_search_for_strings(arr, target):
         middle = (start + end) // 2
         name = clean_str(arr[middle][0])
         midpoint = name
-        distance = m.match(target, name)
+        distance = m.match(target.lower(), name.lower())
         if distance < max_distance:
             best_index = middle
-            best_name = name
             max_distance = distance
             if distance < 2:
                 return arr[best_index]
@@ -57,10 +56,9 @@ def binary_search_for_strings(arr, target):
 
     for row in arr:
         name = clean_str(row[0])
-        distance = m.match(target, name)
+        distance = m.match(target.lower(), name.lower())
         if distance < max_distance:
             max_distance = distance
-            best_name = name
             if distance < 5:
                 return row
 
