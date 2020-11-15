@@ -56,7 +56,7 @@ def binary_search_for_strings(arr, target):
 
     for row in arr:
         name = clean_str(row[0])
-        distance = m.match(target.lower(), name.lower())
+        distance = m.match(target, name)
         if distance < max_distance:
             max_distance = distance
             if distance < 5:
