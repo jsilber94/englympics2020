@@ -85,14 +85,14 @@ def binary_search_for_strings(arr, target, search_type):
                 return row
 
     if distance > 15:
-        return "?"
+        return ['?', '?', '?', '? ', '?']
     return arr[best_index]
 
 
 def print_supplier(supplier, file_nbr):
     print('name: ' + supplier[0])
-    # print('SIC4 Category: ' + supplier[1])
-    # print('SIC8 Category: ' + supplier[2])
-    # print('Phone: ' + str(supplier[3]))
-    # print('id: ' + str(supplier[4]))
-    # print('file number: ' + file_nbr)
+    print('SIC4 Category: ' + supplier[1])
+    print('SIC8 Category: ' + supplier[2])
+    print('Phone: ' + str(supplier[3]))
+    print('id: ' + str(supplier[4]))
+    print('file number: ' + file_nbr)
