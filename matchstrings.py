@@ -26,48 +26,48 @@ class MatchString:
         self.delete_costs[ord(' ')] = 0.25
 
         # Common OCR Mistakes - Group 1
-        self.substitute_costs[ord('O'), ord('D')] = 0.25
-        self.substitute_costs[ord('D'), ord('O')] = 0.25
+        self.substitute_costs[ord('o'), ord('o')] = 0.75
+        self.substitute_costs[ord('d'), ord('o')] = 0.75
 
-        self.substitute_costs[ord('Q'), ord('D')] = 0.25
-        self.substitute_costs[ord('D'), ord('Q')] = 0.25
+        self.substitute_costs[ord('q'), ord('d')] = 0.75
+        self.substitute_costs[ord('d'), ord('q')] = 0.75
 
-        self.substitute_costs[ord('O'), ord('Q')] = 0.25
-        self.substitute_costs[ord('Q'), ord('O')] = 0.25
+        self.substitute_costs[ord('o'), ord('q')] = 0.75
+        self.substitute_costs[ord('q'), ord('o')] = 0.75
 
         # Common OCR Mistakes - Group 2
-        self.substitute_costs[ord('I'), ord('J')] = 0.25
-        self.substitute_costs[ord('J'), ord('I')] = 0.25
+        self.substitute_costs[ord('i'), ord('j')] = 0.75
+        self.substitute_costs[ord('j'), ord('i')] = 0.75
 
-        self.substitute_costs[ord('I'), ord('L')] = 0.25
-        self.substitute_costs[ord('L'), ord('I')] = 0.25
+        self.substitute_costs[ord('i'), ord('l')] = 0.75
+        self.substitute_costs[ord('l'), ord('i')] = 0.75
 
-        self.substitute_costs[ord('I'), ord('T')] = 0.25
-        self.substitute_costs[ord('T'), ord('I')] = 0.25
+        self.substitute_costs[ord('i'), ord('t')] = 0.75
+        self.substitute_costs[ord('t'), ord('i')] = 0.75
 
-        self.substitute_costs[ord('J'), ord('L')] = 0.25
-        self.substitute_costs[ord('L'), ord('J')] = 0.25
+        self.substitute_costs[ord('j'), ord('l')] = 0.75
+        self.substitute_costs[ord('l'), ord('j')] = 0.75
 
-        self.substitute_costs[ord('J'), ord('T')] = 0.25
-        self.substitute_costs[ord('T'), ord('J')] = 0.25
+        self.substitute_costs[ord('j'), ord('t')] = 0.75
+        self.substitute_costs[ord('t'), ord('j')] = 0.75
 
-        self.substitute_costs[ord('L'), ord('T')] = 0.25
-        self.substitute_costs[ord('T'), ord('L')] = 0.25
+        self.substitute_costs[ord('l'), ord('t')] = 0.75
+        self.substitute_costs[ord('t'), ord('l')] = 0.75
 
         # Common OCR Mistakes - Group 3
 
-        self.substitute_costs[ord('U'), ord('V')] = 0.25
-        self.substitute_costs[ord('V'), ord('U')] = 0.25
+        self.substitute_costs[ord('u'), ord('v')] = 0.75
+        self.substitute_costs[ord('v'), ord('u')] = 0.75
 
         # Common OCR Mistakes - Group 4
 
-        self.substitute_costs[ord('F'), ord('P')] = 0.5
-        self.substitute_costs[ord('P'), ord('F')] = 0.5
+        self.substitute_costs[ord('F'), ord('P')] = 0.75
+        self.substitute_costs[ord('P'), ord('F')] = 0.75
 
         # Common OCR Mistakes - Group 5
 
-        self.substitute_costs[ord('C'), ord('G')] = 0.5
-        self.substitute_costs[ord('G'), ord('C')] = 0.5
+        self.substitute_costs[ord('c'), ord('g')] = 0.75
+        self.substitute_costs[ord('g'), ord('c')] = 0.75
 
     def match(self, string1, string2):
         # Testing
