@@ -40,7 +40,9 @@ def get_name(text_to_parse):
                 for thing in stuff_to_remove:
                     text_to_parse_split[j] = text_to_parse_split[j].replace(thing, "")
                 clean_data = text_to_parse_split[j].replace(" ", "")
-                names.append(clean_data)
+                clean_data = clean_data.encode('ascii', 'ignore')
+                clean_data = clean_data.lower()
+                names.append(str(clean_data))
 
         return names
     except IndexError:
