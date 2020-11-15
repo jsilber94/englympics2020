@@ -18,8 +18,8 @@ if __name__ == '__main__':
     # m = MatchString()
 
     # process json and get a list of keywords to match
-    # search_objects = process_json(sys.argv[1])
-    search_objects = process_json("data/Training Json")
+    search_objects = process_json(sys.argv[1])
+    # search_objects = process_json("data/Training Json")
 
     start = time.time()
     # iterate through the keywords file by file
