@@ -1,16 +1,16 @@
 # englympics2020
 
-Brianne O'Gallagher-Roy 
-Jesse Silber
-Alec Adub
-Kris Beauchemin
+Brianne O'Gallagher-Roy \
+Jesse Silber \
+Alec Adub \
+Kris Beauchemin \
 
 
 # Downloads
 
 Don't forget to add python path to your env variables ! 
 
-python3: https://www.python.org/downloads/ \
+python3: https://www.python.org/downloads  \
 
 #Commands
 
