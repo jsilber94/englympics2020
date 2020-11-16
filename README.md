@@ -1,7 +1,10 @@
 # englympics2020
 
-Brianne O'Gallagher-Roy \
+Brianne O'Gallagher-Roy 
+Jesse Silber
 Alec Adub
+Kris Beauchemin
+
 
 # Downloads
 
